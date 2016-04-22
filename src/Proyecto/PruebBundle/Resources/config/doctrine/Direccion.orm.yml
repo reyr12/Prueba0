@@ -1,0 +1,23 @@
+Proyecto\PruebBundle\Entity\Direccion:
+    type: entity
+    table: null
+    repositoryClass: Proyecto\PruebBundle\Repository\DireccionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '20'
+manyToOne:
+    personal:
+        targetEntity: Proyecto\PruebBundle\Entity\Personal
+        cascade: ["persist"]
+        inversedBy: direccion
+        joinColumn:
+          name: personal_id
+          referencedColumnName: id
+lifecycleCallbacks: {  }

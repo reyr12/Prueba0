@@ -1,0 +1,20 @@
+Proyecto\PruebBundle\Entity\Personal:
+    type: entity
+    table: null
+    repositoryClass: Proyecto\PruebBundle\Repository\PersonalRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '20'
+oneToMany:
+    direccion:
+        targetEntity: Proyecto\PruebBundle\Entity\Direccion
+        cascade: ["persist"]
+        mappedBy: Personal
+lifecycleCallbacks: {  }
